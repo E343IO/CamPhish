@@ -326,3 +326,4 @@ dependencies
 camphish
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
+ArNam=$(dpkg --print-architecture)
