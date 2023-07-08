@@ -201,7 +201,7 @@ cloudflare_server(){ # According to camphish code
     php -S 127.0.0.1:3333 > /dev/null 2>&1 & 
     sleep 2
     printf "\e[1;92m[\e[0m+\e[1;92m] Starting cloudflare server...\n"
-    [[ -e .cloud.log ]] && rm -rf .cloud.log && touch .cloud.log
+    [[ -e .cloud.log ]] && rm -rf .cloud.log && touch .cloud.log || touch .cloud.log
     if [[ `command -v termux-chroot` || "$arch2" == "Android" ]]; then
     	termux-chroot ./cloudflare tunnel --url 127.0.0.1:3333 --logfile .cloud.log > /dev/null 2>&1 & sleep 5 
     else
